@@ -4,6 +4,9 @@ import time
 def f(x): return -x ** 2 + 2 * x + 1
 
 
+def flinha(x): return -2 * x + 2
+
+
 def media(a, b): return (a + b) / 2
 
 
@@ -38,13 +41,19 @@ def metodoBisseccao(a: int, b: int):
             else:
                 maior0 = x
         else:
-            print(f"x' = {round(x,4)}")
+            print(f"x' = {round(x, 4)}")
             break
 
 
 # Questão 3
 def metodoNewtonRaphson(a: int, b: int):
-    pass
+    x = media(a, b)
+    while True:
+        if modulo(f(x)) >= 0.05:
+            x = x - (f(x) / flinha(x))
+        else:
+            print(f"x' = {round(x, 4)}")
+            break
 
 
 print("Questão 1:")
